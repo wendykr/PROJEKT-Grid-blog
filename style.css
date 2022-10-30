@@ -85,8 +85,6 @@ blockquote {
 	}
 }
 
-
-
 p {
 	margin-top: 0;
 }
@@ -113,9 +111,19 @@ h2 {
 .tip {
 	background-color: var(--svetla);
 	color: var(--seda);
-	font-size: 14px;
+	font-size: 18px;
 	padding: 20px;
 	align-self: start;
+}
+
+.tip p {
+	margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+	.tip {
+		font-size: 14px;
+	}
 }
 
 .tip a {
@@ -129,12 +137,37 @@ h2 {
 	margin-bottom: 20px;
 }
 
+.tip-vlevo:last-of-type {
+	border-left: 2px solid var(--zluta);
+	text-align: left;
+	margin-bottom: 20px;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.tip-vlevo:last-of-type img {
+	flex: 0 1 25%;
+}
+
+.tip-vlevo:last-of-type p {
+	flex: 1 0 auto;
+}
+
 @media screen and (min-width: 800px) {
 	.tip-vlevo {
 		grid-column: 1;
 		border-right: 2px solid var(--zluta);
+		border-left: 0;
 		text-align: right;
 		margin-bottom: 0;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.tip-vlevo:last-of-type {
+		display: block;
+		border-left: 0;
 	}
 }
 
@@ -179,13 +212,15 @@ blockquote::before, blockquote::after {
 }
 
 .tip img {
-	max-width: 100%;
+	max-width: 25%;
 	height: auto;
 }
 
-.tip img {
-	max-width: 100%;
-	height: auto;
+@media screen and (min-width: 800px) {
+	.tip img {
+		max-width: 100%;
+		height: auto;
+	}
 }
 
 figure img {
@@ -201,11 +236,12 @@ figure img {
 
 footer {
 	color: var(--seda);
-	font-size: 14px;
+	font-size: 16px;
 }
 
 @media screen and (min-width: 800px) {
 	footer {
+		font-size: 14px;
 		grid-column: 2;
 	}
 }
